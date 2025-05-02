@@ -4,7 +4,8 @@
   "description": "Mint Club V2",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create-curve": "node scripts/create-curve.js"
   },
   "repository": {
     "type": "git",
@@ -20,12 +21,15 @@
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "@nomiclabs/hardhat-solhint": "^4.0.1",
     "@openzeppelin/contracts": "^5.0.1",
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.5.0",
     "hardhat": "^2.22.13",
     "hardhat-interface-generator": "^0.0.6",
     "keccak256": "^1.0.6",
     "merkletreejs": "^0.3.11",
     "solidity-coverage": "^0.8.5",
     "web3": "^4.3.0"
+  },
+  "dependencies": {
+    "ethers": "^6.13.7"
   }
 }
