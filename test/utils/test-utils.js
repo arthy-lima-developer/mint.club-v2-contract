@@ -31,6 +31,7 @@ exports.getCreationFee = function (network) {
     hashkey: 10n ** 18n, // 1 HSK (~$2)
     unichain: 7n * 10n ** 14n, // 0.0007 ETH (~$2)
     over: 50n * 10n ** 18n, // 50 OVER (~$1.4)
+    gnosis: 7n * 10n ** 14n, // 0.0007 xDai (~$2)
     // Testnets
     sepolia: 7n * 10n ** 14n, // 0.007 ETH - testnet
     baseSepolia: 0n, // 0 ETH - testnet
@@ -68,7 +69,8 @@ exports.getWETHAddress = function (network) {
     shibarium: "0xC76F4c819D820369Fb2d7C1531aB3Bb18e6fE8d8", // WBONE
     hashkey: "0xB210D2120d57b758EE163cFfb43e73728c471Cf1", // WHSK
     unichain: "0x4200000000000000000000000000000000000006", // WETH
-    over: "0x59c914C8ac6F212bb655737CC80d9Abc79A1e273", // WOVER
+    over: "0x59c914C8ac6F212bb655737CC80d9Abc79A1e273", // Wrapped OVER
+    gnosis: "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d", // WXDAI on Gnosis Chain
     // Testnets
     sepolia: "0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14", // WETH
     baseSepolia: "0x4200000000000000000000000000000000000006", // WETH
@@ -108,6 +110,7 @@ exports.getMaxSteps = function (network) {
     hashkey: 1000n, // 30M gas limit
     unichain: 1000n, // 30M gas limit
     over: 1000n, // 30M gas limit
+    gnosis: 1000n, // 30M gas limit
     // Testnets
     sepolia: 1000n, // 30M gas limit
     baseSepolia: 1000n, // 30M gas limit

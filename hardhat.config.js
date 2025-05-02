@@ -35,142 +35,11 @@ module.exports = {
     timeout: 12000 * 1000, // test timeout: 2 minutes
   },
   networks: {
-    hardhat: {
-      forking: {
-        url: process.env.RPC_BASE,
-        blockNumber: 27276515,
-      },
-    },
-    mainnet: {
-      url: process.env.RPC_MAINNET,
-      chainId: 1,
+    hardhat: {},
+    gnosis: {
+      url: process.env.RPC_GNOSIS,
+      chainId: 100,
       accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    optimisticEthereum: {
-      url: process.env.RPC_OPTIMISM,
-      chainId: 10,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    arbitrumOne: {
-      url: process.env.RPC_ARBITRUM,
-      chainId: 42161,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    base: {
-      url: process.env.RPC_BASE,
-      chainId: 8453,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    polygon: {
-      url: process.env.RPC_POLYGON,
-      chainId: 137,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    bsc: {
-      url: process.env.RPC_BSC,
-      chainId: 56,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    avalanche: {
-      url: process.env.RPC_AVALANCHE,
-      chainId: 43114,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    blast: {
-      url: process.env.RPC_BLAST,
-      chainId: 81457,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    degen: {
-      url: "https://rpc.degen.tips",
-      chainId: 666666666,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    zora: {
-      url: "https://rpc.zora.energy",
-      chainId: 7777777,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    klaytn: {
-      url: "https://public-en.node.kaia.io",
-      chainId: 8217,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    cyber: {
-      url: "https://cyber.alt.technology",
-      chainId: 7560,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    ham: {
-      url: "https://ham.calderachain.xyz/http",
-      chainId: 5112,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    apechain: {
-      url: "https://apechain.calderachain.xyz/http",
-      chainId: 33139,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    shibarium: {
-      url: "https://www.shibrpc.com",
-      chainId: 109,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    hashkey: {
-      url: "https://mainnet.hsk.xyz",
-      chainId: 177,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    unichain: {
-      url: "https://mainnet.unichain.org",
-      chainId: 130,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    over: {
-      url: "https://rpc.overprotocol.com",
-      chainId: 54176,
-      accounts: [process.env.MAINNET_PRIVATE_KEY],
-    },
-    // Testnets
-    sepolia: {
-      url: process.env.RPC_SEPOLIA,
-      chainId: 11155111,
-      accounts: [process.env.TEST_PRIVATE_KEY],
-    },
-    baseSepolia: {
-      url: "https://base-sepolia-rpc.publicnode.com",
-      chainId: 84532,
-      accounts: [process.env.TEST_PRIVATE_KEY],
-    },
-    blastSepolia: {
-      url: process.env.RPC_BLAST_SEPOLIA,
-      chainId: 168587773,
-      accounts: [process.env.TEST_PRIVATE_KEY],
-    },
-    avalancheFujiTestnet: {
-      url: process.env.RPC_AVALANCHE_FUJI_TESTNET,
-      chainId: 43113,
-      accounts: [process.env.TEST_PRIVATE_KEY],
-    },
-    movementDevnet: {
-      url: process.env.RPC_MOVEMENT_DEVNET,
-      chainId: 336,
-      accounts: [process.env.TEST_PRIVATE_KEY],
-    },
-    cyberTestnet: {
-      url: "https://cyber-testnet.alt.technology",
-      chainId: 111557560,
-      accounts: [process.env.TEST_PRIVATE_KEY],
-    },
-    overTestnet: {
-      url: "https://wallet-dolphin.rpc.over.network",
-      chainId: 541762,
-      accounts: [process.env.TEST_PRIVATE_KEY],
-    },
-    puppynet: {
-      url: "https://puppynet.shibrpc.com",
-      chainId: 157,
-      accounts: [process.env.TEST_PRIVATE_KEY],
     },
   },
   gasReporter: {
@@ -199,6 +68,8 @@ module.exports = {
       cyber: "unnecessary",
       ham: "unnecessary",
       apechain: process.env.APESCAN_API_KEY,
+      gnosis: process.env.GNOSISSCAN_API_KEY,
+      shibarium: "TODO:",
       hashkey: "unnecessary",
       unichain: process.env.UNICHAINSCAN_API_KEY,
 
@@ -349,6 +220,14 @@ module.exports = {
           apiURL: "https://puppyscan.shib.io/TODO:", // TODO: API verification?
           browserURL: "https://puppyscan.shib.io/",
         },
+      },
+      {
+        network: "gnosis",
+        chainId: 100,
+        urls: {
+          apiURL: "https://api.gnosisscan.io/api",
+          browserURL: "https://gnosisscan.io/"
+        }
       },
     ],
   },
